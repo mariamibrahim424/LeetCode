@@ -41,5 +41,5 @@ LRUCache.prototype.put = function(key, value) {
  * obj.put(key,value)
  */
 
-// space complexity: O(capacity) because we use a map to store the key-value pairs
+// space complexity: O(capacity) because I use a map to store the key-value pairs
 // time complexity: O(1)
