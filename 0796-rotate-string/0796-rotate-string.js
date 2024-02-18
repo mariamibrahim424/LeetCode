@@ -5,7 +5,7 @@
  */
 var rotateString = function(s, goal) {
     let arr = s.split('');
-    for(const letter of s){
+    for(let i = 0; i<s.length;i++){
         let first = arr.shift();
         arr.push(first);
         if(arr.join('') == goal){
