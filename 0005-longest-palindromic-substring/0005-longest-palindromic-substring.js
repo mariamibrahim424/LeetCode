@@ -3,9 +3,8 @@
  * @return {string}
  */
 var longestPalindrome = function(s) {
-    // if(s.length === 1) return s;
     if(s.length === 0) return '';
-    
+
     let longestStr = s[0];
     for(let i = 0; i<s.length;i++){
         for(let j = s.length-1; j > i;j--){
@@ -21,8 +20,9 @@ var longestPalindrome = function(s) {
 
 var isPalindrome = function (start,end,str){
     while(end > start){
-        if(str[end] !== str[start]) return false;
-        end--,start++;
+        if(str[end--] !== str[start++]) return false;
     }
     return true;
 };
+// runtime complexity:
+// space complexity: 
