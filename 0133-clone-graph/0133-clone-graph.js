@@ -6,6 +6,8 @@
  * };
  */
 
+// Space complexity: O(m*n)
+// time complexity: O(m*n)
 /**
  * @param {Node} node
  * @return {Node}
@@ -23,7 +25,7 @@ var cloneGraph = function(node) {
         for(const neighbor of currNode.neighbors){
             if(!visited.has(neighbor)){
                 let clonedNode = new Node(neighbor.val);
-                visited.set(neighbor,clonedNode);
+                visited.set(neighbor, clonedNode);
                 queue.push(neighbor);
             }
             visited.get(currNode).neighbors.push(visited.get(neighbor));
