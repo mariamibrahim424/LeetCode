@@ -3,26 +3,30 @@
  * @return {string}
  */
 var longestPalindrome = function(s) {
-    if(s.length === 0) return '';
-
-    let longestStr = s[0];
-    for(let i = 0; i<s.length;i++){
-        for(let j = s.length-1; j > i;j--){
-            if(isPalindrome(i,j,s)){
-                if(j-i >= longestStr.length){
-                    longestStr = s.slice(i,j+1);
-                }
-            }
-        }
+    let start = 0;
+    let end = 0;
+    for(let i=0;i<s.length;i++){
+       let odd = expandAroundCenter(s,i,i);
+       let even = expandAroundCenter(s,i,i+1);
+       let temp = Math.max(odd,even);
+       if(temp > end - start){
+            start = i - Math.floor((temp - 1) / 2);
+            end = i + Math.floor(temp / 2);
+       }
     }
-    return longestStr;
+    return s.slice(start,end+1)   
 };
 
-var isPalindrome = function (start,end,str){
-    while(end > start){
-        if(str[end--] !== str[start++]) return false;
+var expandAroundCenter = function(s,start,end){
+    while(start >= 0 && end < s.length && s[start] == s[end]){
+        start--;
+        end++;
     }
-    return true;
-};
-// runtime complexity:
-// space complexity: 
+    return end - start - 1
+}
+
+// console.log(longestPalindrome('a')); // single
+// console.log(longestPalindrome('ac')); // single
+// console.log(longestPalindrome('tcact')); // odd
+// console.log(longestPalindrome('tcaact')); // even
+// console.log(longestPalindrome('yct')); // single
