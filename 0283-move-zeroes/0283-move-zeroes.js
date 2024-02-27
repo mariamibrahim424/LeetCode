@@ -21,21 +21,3 @@ var moveZeroes = function(nums) {
         }
     }
 };
-
-
-// var moveZeroes = function(nums) {
-//     let nonZeroElements = [];
-//     let zerosCount = 0;
-
-//     for(let i = 0; i < nums.length; i++) {
-//         if(nums[i] !== 0) {
-//             nonZeroElements.push(nums[i]);
-//         } else {
-//             zerosCount++;
-//         }
-//     }
-
-//     // Reconstruct the array with non-zero elements followed by zeros
-//     nums.length = 0;  // Clear the original array
-//     nums.push(...nonZeroElements, ...Array(zerosCount).fill(0));
-// };
