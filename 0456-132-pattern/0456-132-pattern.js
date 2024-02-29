@@ -19,3 +19,18 @@ var find132pattern = function(nums) {
     }
     return false;
 };
+
+// subarray not subsequence (sliding window)
+// /**
+//  * @param {number[]} nums
+//  * @return {boolean}
+//  */
+// // [1,4,2,6,9] i<j<k and [i] < [k] < [j]
+// var find123Pattern = function(nums){
+//   for(let i = 0; i+2 < nums.length;i++){
+//     if(nums[i] < nums[i+2] && nums[i+2] < nums[i+1]){
+//       return true;
+//     }
+//   }
+//   return false;
+// }
