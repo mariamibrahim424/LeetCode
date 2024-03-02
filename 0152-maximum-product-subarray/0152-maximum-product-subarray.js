@@ -13,8 +13,8 @@ var maxProduct = function(nums) {
     let product = nums[0], max = product, min = product;
     for(let i = 1;i<nums.length;i++){
         temp = max;
-        max = Math.max(nums[i],nums[i]*max,nums[i]*min);
-        min = Math.min(nums[i],nums[i]*temp,nums[i]*min);
+        max = Math.max(nums[i],nums[i] * max,nums[i] * min);
+        min = Math.min(nums[i],nums[i] * temp,nums[i] * min);
         
         product = Math.max(max,product);
     }
